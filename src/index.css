@@ -5,9 +5,38 @@
   }
 
 body {
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-p, button {
+.container {
+    margin: 0;
+    padding: 100px 0px;
+    background-image: url('/quiz-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    color: white;
+}
+
+p, .start {
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header {
+    padding-top: 50px;
+}
+
+.p {
+}
+
+.start button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10%;
+    border-color: transparent;
+
+    background-color: #C3EDFF;
 }
