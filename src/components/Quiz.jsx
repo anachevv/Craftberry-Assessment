@@ -5,11 +5,11 @@ export default function Quiz() {
             <div className="header">
                 <h1 className="bree-serif-regular">Build a self care routine suitable for you</h1>
             </div>
-            <div className="paragraph">
+            <div>
                 <p>Take out test to get a personalised self care routine based on your needs.</p>
             </div>
             <div className="start">
-                <button>Start the quiz</button>
+                <button onClick={{}}>Start the quiz</button>
             </div>
         </div>
     </>
