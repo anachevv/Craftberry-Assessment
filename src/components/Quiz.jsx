@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 export default function Quiz() {
+    const navigate = useNavigate();
+    const redirect = () => {
+        navigate('/question-1');
+    }
+    
   return (
     <>
         <div className="container">
@@ -9,7 +17,7 @@ export default function Quiz() {
                 <p>Take out test to get a personalised self care routine based on your needs.</p>
             </div>
             <div className="start">
-                <button onClick={{}}>Start the quiz</button>
+                <button onClick={redirect}>Start the quiz</button>
             </div>
         </div>
     </>
