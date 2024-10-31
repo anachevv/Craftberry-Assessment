@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Quiz() {
     const navigate = useNavigate();
     const redirect = () => {
-        navigate('/question-1');
+        navigate('/question');
     }
     
   return (
