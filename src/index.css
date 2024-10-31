@@ -4,6 +4,19 @@
     font-style: normal;
 }
 
+.raleway-header {
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -72,19 +85,108 @@ p {
 }
 
 
-/* Question 1 */
-
-.raleway-header {
-    font-family: "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
+/* Question */
 
 .q-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 300px 0px;
 }
 
 .q-header {
     font-size: 1.5rem;
+}
+
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px 0px;
+}
+
+.options label {
+    border: 1px solid #4DA6FF;
+    padding: 10px 100px 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options input[type="radio"]:checked+label {
+    background-color: #e6f7ff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 50px;
+}
+
+.back-button {
+    color: #666;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.next-button {
+    padding: 15px 30px;
+    background-color: #cce7ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding-top: 30px;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 6;
+}
+
+.progress-circle .bg {
+    stroke: #e6f4fa;
+    /* Light background color */
+}
+
+.progress-circle .progress {
+    stroke: #7fcce9;
+    /* Progress color */
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    /* Circumference of circle (2 * π * radius) */
+    stroke-dashoffset: 314;
+    /* Start fully hidden */
+    transition: stroke-dashoffset 0.3s;
+}
+
+#progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    font-size: 1.1rem;
+    color: #333;
 }
