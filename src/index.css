@@ -91,19 +91,20 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 300px 0px;
+    margin: 300px 0px;
 }
 
 .q-header {
     font-size: 1.5rem;
+    width: 600px;
 }
 
-
-.options {
+.sub {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin: 50px 0px;
+    flex-wrap: nowrap;
 }
 
 .options label {
@@ -173,12 +174,9 @@ p {
 
 .progress-circle .progress {
     stroke: #7fcce9;
-    /* Progress color */
     stroke-linecap: round;
     stroke-dasharray: 314;
-    /* Circumference of circle (2 * π * radius) */
     stroke-dashoffset: 314;
-    /* Start fully hidden */
     transition: stroke-dashoffset 0.3s;
 }
 
