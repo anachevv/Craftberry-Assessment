@@ -10,11 +10,19 @@ export default function Question() {
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+
+  const handleSelect = (e) => {
+    const newAnswers = [...answers];
+    newAnswers[currentQuestion] = e.target.value;
+    setAnswers(newAnswers);
+  }
 
   const handleNext = (e) => {
     e.preventDefault();
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
+      setSelectedAnswer(null);
     } else {
         window.location.href = '/results';
     }
@@ -25,7 +33,7 @@ export default function Question() {
     if (currentQuestion > 0) {
       setCurrentQuestion((prev) => prev - 1);
     } else {
-      window.location.href = '/'; // Redirect to homepage if on the first question
+      window.location.href = '/';
     }
   };
 
@@ -40,7 +48,7 @@ export default function Question() {
             <form action="#" method="post">
               {questions[currentQuestion].options.map((option, index) => (
                 <div className="sub" key={index}>
-                  <input type="radio" id={option} name="answer" value={option} />
+                  <input type="radio" id={option} name="answer" value={option} checked={answers[currentQuestion] === option} onChange={handleSelect} />
                   <label className="poppins-regular" htmlFor={option}>{`${String.fromCharCode(97 + index)}. ${option}`}</label>
                 </div>
               ))}
