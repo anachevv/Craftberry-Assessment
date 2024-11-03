@@ -44,28 +44,21 @@ export default function Products() {
                 </div>
             </div>
 
-            <div className="recommendation-container">
-                <div className="recommendations">
-                    <h2>Products</h2>
-                    {/* <div className="recommendations-list"> */}
+            <div className="products-container">
+                <div className="products-header">
+                    <h2 className="bree-serif-regular">Products</h2>
+                </div>
+
+                <div className="products">
                     {recommendations.map((product) => (
-                        <div key={product.id} className="product-card">
+                        <div key={product.id} className="product">
                             <img src={product.images[0]?.src} alt={product.title} className="product-image" />
-                            <h3 className="product-name">{product.title}</h3>
-                            <p className="product-price">{`$${product.variants[0].price}`}</p>
+                            <h3 className="bree-serif-regular">{product.title}</h3>
+                            <p className="poppins-regular">{`$${product.variants[0].price}`}</p>
                         </div>
                     ))}
-                    {/* </div> */}
                 </div>
-                
-                <div className="more">
-                    <img src="/next.png" alt="next" />
-                </div>
-
             </div>
-            
-
-            {/* {error && <p className="error-message">Error: {error}</p>} */}
         </>
     );
 }

@@ -306,3 +306,25 @@ p {
     width: 70px;
     cursor: pointer;
 }
+
+
+/* Products */
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.products {
+    display: flex;
+}
+
+.products img {
+    width: 50%;
+    height: 50%;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin: 0 auto;
+}

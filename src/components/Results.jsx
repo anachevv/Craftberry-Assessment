@@ -76,20 +76,6 @@ export default function Results() {
                 </div>
 
             </div>
-            {/* <div className="recommendations">
-                <h2>Recommended Products</h2>
-                <div className="recommendations-list">
-                    {recommendations.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <img src={product.images[0]?.src} alt={product.title} className="product-image" />
-                            <h3 className="product-name">{product.title}</h3>
-                            <p className="product-price">{`$${product.variants[0].price}`}</p>
-                        </div>
-                    ))}
-                </div>
-            </div> */}
-
-            {/* {error && <p className="error-message">Error: {error}</p>} */}
         </>
     );
 }
