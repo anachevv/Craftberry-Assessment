@@ -52,7 +52,10 @@ export default function Products() {
                 <div className="products">
                     {recommendations.map((product) => (
                         <div key={product.id} className="product">
-                            <img src={product.images[0]?.src} alt={product.title} className="product-image" />
+                            <img src={product.images[0]?.src} alt={product.title} />
+                            <div className="wishlist">
+                                <img src='./fav.png' alt='add to wishlist' />
+                            </div>
                             <h3 className="bree-serif-regular">{product.title}</h3>
                             <p className="poppins-regular">{`$${product.variants[0].price}`}</p>
                         </div>

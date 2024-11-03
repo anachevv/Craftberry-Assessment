@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 export default function Results() {
     const navigate = useNavigate();
     const [recommendations, setRecommendations] = useState([]);
+    const [wishlist, setWishlist] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -60,15 +61,18 @@ export default function Results() {
                 </div>
 
                 <div className="recommendations">
-                    {/* <div className="recommendations-list"> */}
                     {recommendations.slice(1, 3).map((product) => (
-                        <div key={product.id} className="product-card">
-                            <img src={product.images[0]?.src} alt={product.title} className="product-image" />
-                            <h3 className="bree-serif-regular">{product.title}</h3>
-                            <p className="poppins-regular">{`$${product.variants[0].price}`}</p>
+                        <div className="rec-container">
+                            <div key={product.id} className="product">
+                                <img src={product.images[0]?.src} alt={product.title} />
+                                <div className="wishlist">
+                                    <img src='./fav.png' alt='add to wishlist' />
+                                </div>
+                                <h3 className="bree-serif-regular">{product.title}</h3>
+                                <p className="poppins-regular">{`$${product.variants[0].price}`}</p>
+                            </div>
                         </div>
                     ))}
-                    {/* </div> */}
                 </div>
                 
                 <div className="more">

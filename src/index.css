@@ -308,6 +308,7 @@ p {
 }
 
 
+
 /* Products */
 
 .products-container {
@@ -317,6 +318,9 @@ p {
 
 .products {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .products img {
@@ -324,7 +328,30 @@ p {
     height: 50%;
 }
 
-.products h2 {
+.product > img {
+    background-color: #E6E2DB;
+}
+
+.products-header h2 {
+    padding: 50px 0;
     font-size: 2rem;
     margin: 0 auto;
+}
+
+.wishlist {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    right: 17%;
+}
+
+.wishlist img {
+    cursor: pointer;
+}
+
+.wishlist img::focus {
+}
+
+.product {
+    position: relative;
 }
