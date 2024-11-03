@@ -252,7 +252,6 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 0 300px;
-    margin-bottom: 300px;
     position: absolute;
     top: 65%;
 }
@@ -297,4 +296,13 @@ p {
     font-size: 2rem;
     /* width: 50%; */
     margin: 0 auto;
+}
+
+.more {
+    margin-top: 200px;
+}
+
+.more img {
+    width: 70px;
+    cursor: pointer;
 }
