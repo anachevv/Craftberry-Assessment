@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Quiz from './components/Quiz';
 import Question from './components/Question';
 import Results from './components/Results';
-import Products from './components/Results';
+import Products from './components/Products';
 
 
 function App() {
