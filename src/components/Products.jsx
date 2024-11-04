@@ -24,6 +24,10 @@ export default function Products() {
         navigate('/question');
     };
 
+    const addToWishlist = () => {
+        alert('Added to wishlist!');
+    }
+
     return (
         <>
             <div className="results-container">
@@ -54,7 +58,7 @@ export default function Products() {
                         <div key={product.id} className="product">
                             <img src={product.images[0]?.src} alt={product.title} />
                             <div className="wishlist">
-                                <img src='./fav.png' alt='add to wishlist' />
+                                <img onClick={addToWishlist} src='./fav.png' alt='add to wishlist' />
                             </div>
                             <h3 className="bree-serif-regular">{product.title}</h3>
                             <p className="poppins-regular">{`$${product.variants[0].price}`}</p>

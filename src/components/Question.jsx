@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAnswers } from '../utils/AnswersContext';
 
 export default function Question() {
   const questions = [
@@ -10,7 +11,8 @@ export default function Question() {
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  // const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const { answers, setAnswers } = useAnswers();
 
   const handleSelect = (e) => {
     const newAnswers = [...answers];
@@ -22,9 +24,9 @@ export default function Question() {
     e.preventDefault();
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
-      setSelectedAnswer(null);
+      // setSelectedAnswer(null);
     } else {
-        window.location.href = '/results';
+      window.location.href = '/results';
     }
   };
 
@@ -69,6 +71,15 @@ export default function Question() {
           </svg>
           <div className="poppins-regular" id="progress-text">{currentQuestion + 1}/5</div>
         </div>
+
+        {/* <div>
+          <h2>Your Answers:</h2>
+          <ul>
+            {answers.map((answer, index) => (
+              <li key={index}>{answer}</li>
+            ))}
+          </ul>
+        </div> */}
       </div>
     </>
   );

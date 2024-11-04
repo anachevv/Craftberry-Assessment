@@ -1,11 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import { useAnswers } from '../utils/AnswersContext';
 
 export default function Results() {
     const navigate = useNavigate();
     const [recommendations, setRecommendations] = useState([]);
     const [wishlist, setWishlist] = useState([]);
     const [error, setError] = useState(null);
+    const { answers } = useAnswers();
+
+    console.log('Fetched Answers:', answers);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,6 +32,10 @@ export default function Results() {
     const redirectToProducts = () => {
         navigate('/products');
     };
+
+    const addToWishlist = () => {
+        alert('Added to wishlist!');
+    }
 
     return (
         <>
@@ -66,7 +74,7 @@ export default function Results() {
                             <div key={product.id} className="product">
                                 <img src={product.images[0]?.src} alt={product.title} />
                                 <div className="wishlist">
-                                    <img src='./fav.png' alt='add to wishlist' />
+                                    <img onClick={addToWishlist} src='./fav.png' alt='add to wishlist' />
                                 </div>
                                 <h3 className="bree-serif-regular">{product.title}</h3>
                                 <p className="poppins-regular">{`$${product.variants[0].price}`}</p>
@@ -74,10 +82,19 @@ export default function Results() {
                         </div>
                     ))}
                 </div>
-                
+
                 <div className="more">
                     <img onClick={redirectToProducts} src="/next.png" alt="next" />
                 </div>
+
+                {/* <div>
+                    <h2>Your Answers:</h2>
+                    <ul>
+                        {answers.map((answer, index) => (
+                            <li key={index}>{answer}</li>
+                        ))}
+                    </ul>
+                </div> */}
 
             </div>
         </>
